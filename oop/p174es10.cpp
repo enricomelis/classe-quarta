@@ -12,7 +12,7 @@ class Libro{
     public:
         void inizializza(string name, float price, int scaffale, int pagine, string editore);
         void stampa();
-        void applicaSconto();
+        float applicaSconto();
 } libro;
 
 void Libro::inizializza(string name, float price, int scaffale, int pagine, string editore){
@@ -31,9 +31,9 @@ void Libro::stampa(){
     endl << "Editore: " << casaEditrice << endl;    
 }
 
-void Libro::applicaSconto(){
+float Libro::applicaSconto(){
     float nuovoPrezzo = prezzo * 0.9;
-    cout << "Il prezzo scontato: " << nuovoPrezzo;
+    return nuovoPrezzo;
 }
 
 int main(){
@@ -59,7 +59,7 @@ int main(){
 
     libro.inizializza(nomeLibro, prezzo, nScaffale, nPagine, editore);
     libro.stampa();
-    libro.applicaSconto();
+    cout << "Prezzo scontato: " << libro.applicaSconto();
     
 
     cout << endl;
