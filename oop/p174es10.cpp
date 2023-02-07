@@ -32,8 +32,7 @@ void Libro::stampa(){
 }
 
 float Libro::applicaSconto(){
-    float nuovoPrezzo = prezzo * 0.9;
-    return nuovoPrezzo;
+    return prezzo * 0.9;
 }
 
 int main(){
