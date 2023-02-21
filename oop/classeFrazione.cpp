@@ -7,12 +7,36 @@ class Frazione{
         int denominatore;
 
     public:
+    /*
+        costruttore: pubblico, non ha tipo di ritorno*, ha lo stesso nome della classe
+        *ritorna un oggetto della classe
+
+        Frazione(int n, int m);    <- costruttore
+        setglobale(int n, int m);
+    */
         void setNumeratore(int n);
         void setDenominatore(int n);
         int mcd(int a, int b);
         void semplifica();
         void stampa();
+    /*
+        ALT126Frazione();   <- distruttore, pulizia della memoria
+    */
 } f1;
+
+/*
+Frazione::Frazione(int n, int m){
+
+}
+
+void Frazione::setglobale(int n, int m){
+
+}
+
+Frazione::ALT126Frazione(){
+    cout << endl << "sto distruggendo l'oggetto";
+}
+*/
 
 void Frazione::setNumeratore(int n){
     numeratore = n;
