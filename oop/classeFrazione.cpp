@@ -48,12 +48,15 @@ void Frazione::stampa(){
     if(numeratore == 0){
         cout << numeratore;
     }
-    if(denominatore != 1 && numeratore != 0){
-        cout << numeratore << " / " << denominatore;
-    }
     else{
-        cout << numeratore;
+        if(denominatore != 1){
+            cout << numeratore << " / " << denominatore;
+        }
+        else{
+            cout << numeratore;
+        }
     }
+    
 }
 
 int main(){
