@@ -45,7 +45,10 @@ void Frazione::semplifica(){
 
 void Frazione::stampa(){
     semplifica();
-    if(denominatore != 1){
+    if(numeratore == 0){
+        cout << numeratore;
+    }
+    if(denominatore != 1 && numeratore != 0){
         cout << numeratore << " / " << denominatore;
     }
     else{
