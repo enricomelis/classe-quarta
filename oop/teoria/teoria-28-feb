@@ -1,0 +1,22 @@
+- Classe: struttura dati che contiene dati e funzioni. è la rappresentazione astratta dell'Oggetto
+- Oggetto: istanza della classe
+- Incapsulamento: coesistenza di attributi e metodi. serve a proteggere la classe (le classi sono nate per la sicurezza del codice)
+- Polimorfismo: cambia in base al contesto. esiste dei dati e dei metodi. lo stesso metodo può essere usato in cotesti diversi e avere comportamenti differenti. esempio: void stampa();
+- Ereditarietà: la capacità di una classe di ereditare metodi e attributi da una classe genitore (superclasse - sottoclasse). procedimento ricorsivo che ci permette di risparmiare codice
+- **Costruttore / Distruttore: 
+    metodo particolare che viene eseguito e serve quando viene creata la prima istanza della classe. tre caratteristiche: pubblico, senza tipo di ritorno, ha lo stesso nome della classe
+
+    stesse caratteristiche del costruttore ma davanti ha una tilde (~ | Option5 / ALT126)
+- *Overloading: riscrittura di un metodo con firma differente. esempio: int somma(); 
+    int somma(int a, int b);
+    int somma(float a, float b);
+    int somma(float a, int b);
+- *Ovderriding: capacità di riderfinire metodi dalla classe madre alle classi figlie. sovrascrittura. esempio: void stampa();
+    stesso tipo, stesso nome, stessi parametri (stessa firma/intestazione), corpo diverso che dipende del contesto
+
+    
+
+
+
+*due funzioni tipiche del polimorfismo, soprattutto l'overriding
+**si può anche non dichiarare, nel caso viene creato di default dal compilatore (attributi numerici a 0, stringhr "")
