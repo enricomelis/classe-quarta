@@ -1,0 +1,10 @@
+oop nata per la crisi dei software troppo lunghi. superlcasse e sottoclasse a pagina 199
+
+esempio: superclasse "Elettrodomestici", sottoclasse "Lavatrice", sottoclasse "Radio"
+
+etichetta intermedia: protected. attributi di una classe che dai quali poi deriva una classe. 
+modificabile e accessibile solo della classi figlie
+
+private, protected, public
+
+meccanismo ricorsivo: ogni classe può diventare una classe madre
