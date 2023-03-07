@@ -19,4 +19,4 @@
 
 
 *due funzioni tipiche del polimorfismo, soprattutto l'overriding
-**si può anche non dichiarare, nel caso viene creato di default dal compilatore (attributi numerici a 0, stringhr "")
+**si può anche non dichiarare, nel caso viene creato di default dal compilatore (attributi numerici a 0, stringhe "")

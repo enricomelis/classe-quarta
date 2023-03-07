@@ -1,5 +1,6 @@
 //pagina 207
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Persona{
@@ -33,11 +34,44 @@ void Persona::setCognome(string a){
 }
 
 Persona::~Persona(){
-    cout << endl << "distruttore";
+    cout << endl << "distruttore persona";
+}
+
+class Studente: public Persona {
+    protected:
+        float media;
+    public: 
+        Studente(string no, string co, float me);
+        void stampa();
+        void setNome(string a);
+        void setCognome(string a);
+        ~Studente();
+};
+
+Studente::Studente(string no, string co, float me) : Persona(no, co){
+    media = me;
+}
+
+void Studente::stampa(){
+    cout << "Nome: " << nome <<
+    endl << "Cognome: " << cognome <<
+    endl << "Media: " << media;
+}
+
+void Studente::setNome(string a){
+    nome = a;
+}
+
+void Studente::setCognome(string a){
+    cognome = a;
+}
+
+Studente::~Studente(){
+    cout << endl << "distruttore studente";
 }
 
 int main(){
-    class Persona enricomelis("Enrico", "Melis");
+    class Studente enricomelis("Enrico", "Melis", 8);
     enricomelis.stampa();
 
     cout << endl;
