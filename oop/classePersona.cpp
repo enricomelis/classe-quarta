@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+// classe persona
+
 class Persona{
     protected:
         string nome;
@@ -37,6 +39,8 @@ Persona::~Persona(){
     cout << endl << "distruttore persona";
 }
 
+// classe studente
+
 class Studente: public Persona {
     protected:
         float media;
@@ -70,10 +74,78 @@ Studente::~Studente(){
     cout << endl << "distruttore studente";
 }
 
-int main(){
-    class Studente enricomelis("Enrico", "Melis", 8);
-    enricomelis.stampa();
+// classe sportivo 
 
+class Sportivo : public Persona {
+    protected:
+        string sport;
+    public: 
+        Sportivo(string no, string co, string sp);
+        void stampa();
+        ~Sportivo();
+};
+
+Sportivo::Sportivo(string no, string co, string sp) : Persona(no, co){
+    sport = sp;
+}
+
+void Sportivo::stampa(){
+    cout << "Nome: " << nome <<
+    endl << "Cognome: " << cognome <<
+    endl << "Sport: " << sport;
+}
+
+Sportivo::~Sportivo(){
+    cout << endl << "distruttore sportivo";
+}
+
+// classe calciatore
+
+class Calciatore : public Sportivo {
+    protected:
+        string squadra;
+        string ruolo;
+    public: 
+        Calciatore(string no, string co, string sp, string sq, string ru);
+        void stampa();
+        ~Calciatore();
+
+};
+
+Calciatore::Calciatore(string no, string co, string sp, string sq, string ru): Sportivo(no, co, sp){
+    squadra = sq;
+    ruolo = ru;
+}
+
+void Calciatore::stampa(){
+    cout << "Nome: " << nome <<
+    endl << "Cognome: " << cognome <<
+    endl << "Sport: " << sport <<
+    endl << "Squadra: " << squadra << 
+    endl << "Ruolo: " << ruolo;
+}
+
+Calciatore::~Calciatore(){
+    cout << endl << "distruttore calciatore";
+}
+
+int main(){
+    string nome, cognome, sport, squadra, ruolo;
+    cout << "inserire nome: ";
+    cin >> nome;
+    cout << "inserire cognome: ";
+    cin >> cognome;
+    cout << "inserire sport: ";
+    cin >> sport;
+    cout << "inserire squadra: ";
+    cin >> squadra;
+    cout << "inserire ruolo: ";
+    cin >> ruolo;
+
+    class Calciatore primo(nome, cognome, sport, squadra, ruolo);
+    cout << endl;
+
+    primo.stampa();
     cout << endl;
     return 0;
 }
