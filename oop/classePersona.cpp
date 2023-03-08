@@ -36,7 +36,7 @@ void Persona::setCognome(string a){
 }
 
 Persona::~Persona(){
-    cout << endl << "distruttore persona";
+    cout << endl << "distruttore";
 }
 
 // classe studente
@@ -138,21 +138,20 @@ int main(){
     cin >> nome;
     cout << "inserire cognome: ";
     cin >> cognome;
-    cout << "inserire sport: ";
-    cin >> sport;
+    sport = "calcio";
     cout << "inserire squadra: ";
     cin >> squadra;
     cout << "inserire ruolo: ";
     cin >> ruolo;
     class Calciatore calciatore(nome, cognome, sport, squadra, ruolo);
     
-    cout << endl;
+    cout << endl << "Persona: " << endl;
     persona.stampa();
 
-    cout << endl << endl;
+    cout << endl << endl << "Sportivo: " << endl;
     sportivo.stampa();
 
-    cout << endl << endl;
+    cout << endl << endl << "Calciatore: " << endl;
     calciatore.stampa();
 
     cout << endl;
