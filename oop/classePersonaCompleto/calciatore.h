@@ -10,8 +10,6 @@ class Calciatore : public Sportivo {
     public: 
         Calciatore(string no, string co, string sp, string sq, string ru);
         void stampa();
-        ~Calciatore();
-
 };
 
 Calciatore::Calciatore(string no, string co, string sp, string sq, string ru): Sportivo(no, co, sp){
@@ -25,8 +23,4 @@ void Calciatore::stampa(){
     endl << "Sport: " << sport <<
     endl << "Squadra: " << squadra << 
     endl << "Ruolo: " << ruolo;
-}
-
-Calciatore::~Calciatore(){
-    cout << endl << "distruttore calciatore";
 }

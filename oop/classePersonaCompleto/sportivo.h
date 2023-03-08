@@ -9,7 +9,6 @@ class Sportivo : public Persona {
     public: 
         Sportivo(string no, string co, string sp);
         void stampa();
-        ~Sportivo();
 };
 
 Sportivo::Sportivo(string no, string co, string sp) : Persona(no, co){
@@ -20,8 +19,4 @@ void Sportivo::stampa(){
     cout << "Nome: " << nome <<
     endl << "Cognome: " << cognome <<
     endl << "Sport: " << sport;
-}
-
-Sportivo::~Sportivo(){
-    cout << endl << "distruttore sportivo";
 }
