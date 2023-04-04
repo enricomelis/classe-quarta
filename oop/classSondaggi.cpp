@@ -29,6 +29,7 @@ class Referendum : public Sondaggi {
     public:
         Referendum(int n, int si, int no);
         float getPerc(string richiesta);
+        void setVoti(int nuovo_si, int nuovo_no);
     };
 
 Referendum::Referendum(int n, int si, int no): Sondaggi(n){
@@ -41,7 +42,24 @@ float Referendum::getPerc(string richiesta){
         return n_si * 100 / n_intervistati;
     }
     else {
-        return 0;
+        if(richiesta == "no"){
+            return n_no * 100 / n_intervistati;
+        }
+        else{
+            cout << "richiesta invalida";
+            return 0;
+
+        }
+    }
+}
+
+void Referendum::setVoti(int nuovo_si, int nuovo_no){
+    if(nuovo_si + nuovo_no == n_intervistati){
+        n_si = nuovo_si;
+        n_no = nuovo_no;
+    }
+    else {
+        cout << "i voti inseriti sono invalidi. si (" << nuovo_si << ") + no (" << nuovo_no << ") != intervistati (" << n_intervistati << ").";
     }
 }
 
@@ -75,6 +93,9 @@ int main() {
 
     Referendum sondaggio_referendum_1(intervistati, voti_si, voti_no);
     cout << "la percentuale di si: " << sondaggio_referendum_1.getPerc("si") << "%";
+
+    sondaggio_referendum_1.setVoti(intervistati-8, 10);
+    cout << endl << "la percentuale di si: " << sondaggio_referendum_1.getPerc("si") << "%";
 
     cout << endl << endl;
     return 0;
