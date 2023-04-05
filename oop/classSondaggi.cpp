@@ -1,9 +1,3 @@
-/*
-manca: 
-- setVoti();
-- test con classe Liste
-*/
-
 #include <iostream>
 using namespace std;
 
@@ -104,9 +98,22 @@ int main() {
     } while(voti_no + voti_si != intervistati);
 
     Referendum sondaggio_referendum_1(intervistati, voti_si, voti_no);
-    cout << "la percentuale di si: " << sondaggio_referendum_1.getPerc("si") << "%";
+    cout << endl << "percentuale di si: " << sondaggio_referendum_1.getPerc("si") << "%" << 
+    endl << "percentuale di no: " << sondaggio_referendum_1.getPerc("no") << "%";
+
+    int voto_nuovo_si, voto_nuovo_no;
+    cout << endl << endl << "inserire i nuovi voti per il referendum: " << endl;
+    do {
+        cout << "si: ";
+        cin >> voto_nuovo_si;
+        cout << "no: ";
+        cin >> voto_nuovo_no;
+    } while(voto_nuovo_si + voto_nuovo_no != sondaggio_referendum_1.getIntervistati());
+
+    sondaggio_referendum_1.setVoti(voto_nuovo_si, voto_nuovo_no);
+    cout << endl << "percentuale nuova di si: " << sondaggio_referendum_1.getPerc("si") << "%" << 
+    endl << "percentuale nuova di no: " << sondaggio_referendum_1.getPerc("no") << "%";
 
     cout << endl << endl;
     return 0;
 }
-
