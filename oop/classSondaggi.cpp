@@ -12,7 +12,7 @@ class Sondaggi {
         int n_intervistati;
     public:
         Sondaggi(int n);
-        ~Sondaggi() {cout << "distruttore.";}
+        ~Sondaggi() { cout << "distruttore."; }
         int getIntervistati() { return n_intervistati; }
     };
 
@@ -65,13 +65,27 @@ class Liste : public Sondaggi {
     protected:
         int voti_lista1;
         int voti_lista2;
+        int voti_lista3;
     public:
-        Liste(int n, int voti1, int voti2);
+        Liste(int n, int voti1, int voti2, int voti3);
+        void setVoti(int nuovo_1, int nuovo_2, int nuovo_3);
     };
 
-Liste::Liste(int n, int voti1, int voti2) : Sondaggi(n) {
+Liste::Liste(int n, int voti1, int voti2, int voti3) : Sondaggi(n) {
     voti_lista1 = voti1;
     voti_lista2 = voti2;
+    voti_lista3 = voti3;
+}
+
+void Liste::setVoti(int nuovo_1, int nuovo_2, int nuovo_3){
+    if(nuovo_1 + nuovo_2 + nuovo_3 == n_intervistati){
+        voti_lista1 = nuovo_1;
+        voti_lista2 = nuovo_2;
+        voti_lista3 = nuovo_3;
+    }
+    else {
+        cout << "Voti forniti invalidi, la somma non da il numero totale di intervistrati (" << n_intervistati << ").";
+    }
 }
 
 int main() {
@@ -91,9 +105,6 @@ int main() {
 
     Referendum sondaggio_referendum_1(intervistati, voti_si, voti_no);
     cout << "la percentuale di si: " << sondaggio_referendum_1.getPerc("si") << "%";
-
-    sondaggio_referendum_1.setVoti(intervistati-8, 10);
-    cout << endl << "la percentuale di si: " << sondaggio_referendum_1.getPerc("si") << "%";
 
     cout << endl << endl;
     return 0;
