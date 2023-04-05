@@ -2,8 +2,6 @@
 manca: 
 - setVoti();
 - test con classe Liste
-
-
 */
 
 #include <iostream>
