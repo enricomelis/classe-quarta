@@ -6,7 +6,7 @@ let lowerWords = words.map(word => word.toLowerCase());
 console.log(lowerWords);
 
 let counter = 0;
-let wordCounter = [];
+let wordCounter = {};
 
 for (let i = 0; i < lowerWords.length; i++) {
     for (let j = 0; j<lowerWords.length; j++){
@@ -14,9 +14,9 @@ for (let i = 0; i < lowerWords.length; i++) {
             counter++;
         }
     }
+    wordCounter[lowerWords[i]] = counter;
     counter = 0;
 }
-
 console.log(wordCounter);
 
 
