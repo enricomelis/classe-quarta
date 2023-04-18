@@ -5,7 +5,7 @@ using namespace std;
 
 //definizione Classi
 
-class Pizza {
+class Pizza {   
     protected: 
         string nome;
         map <string, string> ingredienti;
