@@ -1,3 +1,5 @@
+//programma non concluso e non funzionante
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -29,7 +31,7 @@ class Docente {
 
 class Universita {
     public:
-        Docente *lista[dim];
+        Docente lista[dim];
         Universita() {}
         int etaMinima();
 };
@@ -38,19 +40,19 @@ int main(){
     string nome, cognome, codice;
     int eta;
 
-    Universita pisa();
+    Universita a();
 
     for(int i=0; i<dim; i++){
-        Docente *a = new Docente(nome, cognome, codice, eta);
-        pisa->lista[i] = a;
+        // a.lista[i] = new Docente(nome, cognome, codice, eta);
+        
     }
 
     cout << endl;
     return 0;
 }
 
-/*
-int Universita::etaMinima(){
+int Universita::etaMinima()
+{
     int min = lista[0].eta;
     for(int i=0; i<dim; i++){
         if(lista[i].eta < min){
@@ -59,4 +61,3 @@ int Universita::etaMinima(){
     }
     return min;
 }
-*/
